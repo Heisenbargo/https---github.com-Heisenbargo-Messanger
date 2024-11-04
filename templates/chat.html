@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat with {{ receiver.username }}</title>
+</head>
+<body>
+    <h1>Chat with {{ receiver.username }}</h1>
+    
+    <div id="messages">
+        {% for message in messages %}
+            <p><strong>{{ message.sender.username }}:</strong> {{ message.content }} <small>{{ message.timestamp }}</small></p>
+        {% endfor %}
+    </div>
+
+    <form action="/chat/{{ receiver.username }}" method="POST">
+        <input type="text" name="message" placeholder="Type your message" required>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
