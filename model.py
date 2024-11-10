@@ -3,7 +3,6 @@ from sqlalchemy.orm import relationship, sessionmaker, Session
 from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
 
-# Создаем базу и движок SQLAlchemy
 Base = declarative_base()
 DATABASE_URL = "sqlite:///database.db"
 engine = create_engine(DATABASE_URL)
